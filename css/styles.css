@@ -1248,19 +1248,14 @@ details p {
 }
 
 
-/* --- Ajuste chips entrada PazKids --- */
-.trust-row {
-  max-width: 620px;
-}
-
-.trust-row span {
-  white-space: normal;
-  text-align: center;
-  line-height: 1.25;
+/* --- Ajuste notas hero PazKids --- */
+.floating-note {
+  max-width: 260px;
+  line-height: 1.35;
 }
 
 @media (max-width: 760px) {
-  .trust-row span {
-    width: 100%;
+  .floating-note {
+    max-width: 100%;
   }
 }
