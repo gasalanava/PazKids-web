@@ -1261,104 +1261,114 @@ details p {
 }
 
 
-/* --- Sección frente y espalda PazKids --- */
-.angles-section {
+/* --- Frente y espalda corregido PazKids --- */
+.front-back-section {
   background:
-    radial-gradient(circle at 12% 10%, rgba(244, 165, 189, 0.14), transparent 26%),
-    radial-gradient(circle at 88% 16%, rgba(140, 207, 194, 0.18), transparent 28%),
-    rgba(255, 255, 255, 0.62);
+    radial-gradient(circle at 10% 12%, rgba(244, 165, 189, 0.12), transparent 24%),
+    radial-gradient(circle at 90% 18%, rgba(140, 207, 194, 0.14), transparent 26%),
+    rgba(255, 255, 255, 0.56);
 }
 
-.angles-grid {
-  grid-template-columns: 0.9fr 1.1fr;
-}
-
-.angles-copy p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.75;
-  font-weight: 650;
-}
-
-.angle-cards {
+.front-back-grid {
   display: grid;
-  gap: 14px;
-  margin-top: 26px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  width: min(940px, 100%);
+  margin: 0 auto;
 }
 
-.angle-cards article {
-  padding: 20px 22px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(36, 48, 68, 0.08);
-  box-shadow: 0 14px 34px rgba(36, 48, 68, 0.06);
-}
-
-.angle-cards h3 {
-  margin-bottom: 6px;
-}
-
-.angle-cards p {
-  margin: 0;
-  font-size: 0.96rem;
-}
-
-.angles-visual {
-  display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 18px;
-  align-items: center;
-}
-
-.angle-photo {
+.front-back-card {
   position: relative;
-  margin: 0;
   overflow: hidden;
+  min-height: 450px;
   border-radius: 30px;
   background: var(--white);
   box-shadow: var(--shadow);
 }
 
-.angle-photo img {
+.front-back-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.front-photo {
-  aspect-ratio: 4 / 5;
-}
-
-.back-photo {
-  aspect-ratio: 4 / 5.6;
-  transform: translateY(34px);
-}
-
-.angle-photo figcaption {
+.front-back-card div {
   position: absolute;
-  left: 14px;
-  bottom: 14px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  color: var(--ink);
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  padding: 15px 16px;
+  border-radius: 18px;
   background: rgba(255, 255, 255, 0.84);
-  backdrop-filter: blur(12px);
-  font-size: 0.86rem;
+  backdrop-filter: blur(14px);
+}
+
+.front-back-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.front-back-card strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--ink);
+  line-height: 1.32;
+  font-size: 1rem;
   font-weight: 950;
 }
 
+/* --- Biblioteca ligera PazKids --- */
+.gallery-showcase {
+  align-items: stretch;
+}
+
+.gallery-feature {
+  min-height: 650px;
+}
+
+.product-mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 310px;
+  gap: 16px;
+}
+
+.product-tile {
+  min-height: 0;
+}
+
+.product-tile img {
+  object-fit: cover;
+}
+
 @media (max-width: 980px) {
-  .angles-grid,
-  .angles-visual {
+  .front-back-grid {
     grid-template-columns: 1fr;
   }
 
-  .back-photo {
-    transform: none;
+  .front-back-card {
+    min-height: 420px;
   }
 
-  .front-photo,
-  .back-photo {
-    aspect-ratio: 4 / 3.2;
+  .gallery-feature {
+    min-height: 520px;
+  }
+
+  .product-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 300px;
+  }
+}
+
+@media (max-width: 760px) {
+  .front-back-card {
+    min-height: 360px;
+  }
+
+  .product-mosaic {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 340px;
   }
 }
