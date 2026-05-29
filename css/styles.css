@@ -1248,20 +1248,8 @@ details p {
 }
 
 
-/* --- Ajuste notas hero PazKids --- */
-.floating-note {
-  max-width: 260px;
-  line-height: 1.35;
-}
 
-@media (max-width: 760px) {
-  .floating-note {
-    max-width: 100%;
-  }
-}
-
-
-/* --- Frente y espalda corregido PazKids --- */
+/* --- Frente y espalda definitivo PazKids --- */
 .front-back-section {
   background:
     radial-gradient(circle at 10% 12%, rgba(244, 165, 189, 0.12), transparent 24%),
@@ -1271,7 +1259,7 @@ details p {
 
 .front-back-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
   width: min(940px, 100%);
   margin: 0 auto;
@@ -1319,7 +1307,7 @@ details p {
   font-weight: 950;
 }
 
-/* --- Biblioteca ligera PazKids --- */
+/* --- Biblioteca ligera definitiva PazKids --- */
 .gallery-showcase {
   align-items: stretch;
 }
@@ -1330,7 +1318,7 @@ details p {
 
 .product-mosaic {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-auto-rows: 310px;
   gap: 16px;
 }
@@ -1357,7 +1345,7 @@ details p {
   }
 
   .product-mosaic {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: 300px;
   }
 }
