@@ -1246,3 +1246,21 @@ details p {
     height: 48px;
   }
 }
+
+
+/* --- Ajuste chips entrada PazKids --- */
+.trust-row {
+  max-width: 620px;
+}
+
+.trust-row span {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+}
+
+@media (max-width: 760px) {
+  .trust-row span {
+    width: 100%;
+  }
+}
