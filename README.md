@@ -9,20 +9,21 @@ Página web estática para GitHub Pages.
 - `js/main.js`: menú móvil y FAQ.
 - `assets/`: imágenes de marca y fotografías reales.
 
-## Imágenes que debes reemplazar
+## Imágenes usadas
 
-Guarda tus archivos reales con estos nombres dentro de `assets/`:
+Esta versión ya trae las imágenes limpias de PazKids organizadas en `assets/`:
 
-- `logo-pazkids.png`
-- `chaqueta-hero.jpg`
-- `ninos-chaquetas.jpg`
-- `personalizador-preview.jpg`
-- `galeria-1.jpg`
-- `galeria-2.jpg`
-- `galeria-3.jpg`
-- `galeria-4.jpg`
+- `logo-pazkids.png`: logo principal.
+- `chaqueta-hero.jpg`: imagen hero con niños mostrando la espalda de las chaquetas.
+- `ninos-chaquetas.jpg`: imagen de grupo para la sección emocional.
+- `personalizador-preview.jpg`: infografía de ventajas usada como apoyo visual del personalizador.
+- `galeria-1.jpg`: diseño Beatriz.
+- `galeria-2.jpg`: diseño Tomás.
+- `galeria-3.jpg`: diseño Isabela.
+- `galeria-4.jpg`: diseño Gianlucas.
+- `modelo-nina-unicornio.jpg`, `modelo-nino-dino.jpg`, `modelos-naturaleza-1.jpg`, `modelos-naturaleza-2.jpg`: imágenes auxiliares.
 
-Si no las reemplazas, la página cargará los espacios, pero lo profesional se logra con fotos reales.
+También queda una copia de todas las imágenes originales en `assets/imagenes-limpias-originales/`.
 
 ## Publicar en GitHub Pages
 

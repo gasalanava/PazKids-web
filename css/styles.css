@@ -839,6 +839,7 @@ details p {
   }
 
   .gallery-grid,
+  .looks-grid,
   .benefit-grid,
   .process-grid,
   .footer-grid {
@@ -880,4 +881,57 @@ details p {
     width: 52px;
     height: 52px;
   }
+}
+
+.looks-section {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(245, 205, 106, 0.14), transparent 25%),
+    radial-gradient(circle at 88% 20%, rgba(244, 165, 189, 0.13), transparent 26%),
+    rgba(255, 255, 255, 0.58);
+}
+
+.looks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.look-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.look-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.look-card div {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+}
+
+.look-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.look-card strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.08rem;
+  line-height: 1.25;
 }
