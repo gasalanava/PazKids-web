@@ -82,7 +82,7 @@ a {
 
 .nav {
   width: min(1160px, calc(100% - 32px));
-  height: 112px;
+  height: 132px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -95,12 +95,13 @@ a {
   gap: 10px;
   text-decoration: none;
   font-weight: 900;
-  min-width: 170px;
+  min-width: 240px;
 }
 
 .brand-logo {
-  height: 96px;
+  height: 118px;
   width: auto;
+  max-width: none;
   object-fit: contain;
 }
 
@@ -161,7 +162,7 @@ a {
 
 .section-soft {
   position: relative;
-  min-height: calc(100vh - 112px);
+  min-height: calc(100vh - 132px);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -1174,15 +1175,15 @@ details p {
 
 @media (max-width: 760px) {
   .nav {
-    height: 94px;
+    height: 108px;
   }
 
   .brand-logo {
-    height: 82px;
+    height: 94px;
   }
 
   .nav-menu {
-    top: 104px;
+    top: 118px;
   }
 
   .gallery-feature {
@@ -1205,6 +1206,6 @@ details p {
 
 @media (max-width: 430px) {
   .brand-logo {
-    height: 74px;
+    height: 86px;
   }
 }
