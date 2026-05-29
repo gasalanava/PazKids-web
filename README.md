@@ -42,3 +42,15 @@ Busca en `index.html` y cambia:
 - Links de Instagram si deseas modificarlos.
 - Link del personalizador si el definitivo cambia.
 - Textos de tiempos, envíos y disponibilidad según tus reglas comerciales.
+
+
+## Actualización aplicada
+
+- Logo superior más protagonista.
+- WhatsApp Colombia configurado: `https://wa.me/573175168683`.
+- Personalizador tratado como herramienta activa, no como expectativa.
+- Galería ampliada con chaquetas y camisas de jean reales.
+- Nueva sección de comunidad en Instagram con enlaces a Colombia y Panamá.
+- Footer y cierre final más compactos.
+- Las nuevas prendas originales están en `assets/biblioteca/`.
+- Las imágenes optimizadas para la web están en `assets/prendas/`.
