@@ -1360,3 +1360,9 @@ details p {
     grid-auto-rows: 340px;
   }
 }
+
+
+/* --- Seguridad: eliminar sección antigua de ángulos --- */
+.looks-section {
+  display: none !important;
+}
