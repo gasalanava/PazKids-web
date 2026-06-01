@@ -1648,3 +1648,124 @@ details p {
     aspect-ratio: 4 / 4.55;
   }
 }
+
+
+/* --- CTA final PazKids por país --- */
+.final-cta.compact {
+  padding: 62px 0;
+}
+
+.final-cta.compact .final-cta-inner {
+  width: min(920px, 100%);
+  padding: 48px 28px;
+  text-align: center;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 12% 28%, rgba(244, 165, 189, 0.18), transparent 26%),
+    radial-gradient(circle at 88% 24%, rgba(140, 207, 194, 0.20), transparent 28%),
+    rgba(255, 255, 255, 0.86);
+}
+
+.final-cta.compact h2 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 780px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.final-cta.compact p {
+  max-width: 680px;
+  margin: 0 auto 28px;
+}
+
+.final-actions {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+}
+
+.btn-design-main {
+  min-width: min(420px, 100%);
+  min-height: 56px;
+  padding: 16px 32px;
+  font-size: 1.02rem;
+}
+
+.quote-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: min(560px, 100%);
+}
+
+.btn-country {
+  position: relative;
+  overflow: hidden;
+  min-height: 58px;
+  padding: 13px 18px;
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--white);
+  border: 1px solid rgba(36, 48, 68, 0.10);
+  box-shadow: 0 14px 32px rgba(36, 48, 68, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-country::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.btn-country:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(36, 48, 68, 0.12);
+}
+
+.btn-country span,
+.btn-country strong {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.btn-country span {
+  font-size: 0.78rem;
+  line-height: 1.1;
+  font-weight: 900;
+  color: rgba(36, 48, 68, 0.70);
+}
+
+.btn-country strong {
+  margin-top: 3px;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  font-weight: 950;
+}
+
+.btn-panama::before {
+  background:
+    linear-gradient(90deg, #ffffff 0 25%, #d21034 25% 50%, #ffffff 50% 75%, #005293 75% 100%);
+}
+
+.btn-colombia::before {
+  background:
+    linear-gradient(180deg, #fcd116 0 50%, #003893 50% 75%, #ce1126 75% 100%);
+}
+
+@media (max-width: 640px) {
+  .quote-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-design-main {
+    min-width: 100%;
+  }
+
+  .final-cta.compact .final-cta-inner {
+    padding: 36px 18px;
+  }
+}
