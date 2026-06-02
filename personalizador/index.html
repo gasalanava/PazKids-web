@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#fbf7f1" />
+  <title>PazKids | Personaliza tu chaqueta jean</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <a class="home-link" href="https://gasalanava.github.io/PazKids-web/" aria-label="Volver a la página principal de PazKids">← Volver a PazKids</a>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-main">
+      <img id="brandLogo" class="logo" alt="PazKids" />
+      <div class="hero-text">
+        <p class="hero-copy">Aquí puedes crear junto a tu hijo la chaqueta de sus sueños. Al finalizar, guarda el diseño y pídela por WhatsApp a PazKids.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="app">
+    <details class="card intro how-it-works">
+      <summary><span class="how-icon">✨</span> Cómo funciona</summary>
+      <p>Elige frente o espalda y juega con tu hijo a crear una chaqueta única. Agreguen letras y parches de colores, mézclenlos como quieran, muévanlos con el dedo y ubíquenlos donde más les gusten. Si quieren cambiar algo, arrástrenlo a la caneca para eliminarlo y vuelvan a empezar las veces que quieran. Prueben con su nombre, su nickname o parches especiales para hacerla única.</p>
+    </details>
+
+    <section class="grid">
+      <section class="card stage-card">
+        <div class="head stage-head">
+          <div>
+            <span>ASÍ VA QUEDANDO TU CHAQUETA</span>
+          </div>
+          <button id="clearTop" class="reset-top" type="button" title="Empezar de nuevo" aria-label="Empezar de nuevo">↻</button>
+          <div class="switch" aria-label="Seleccionar vista de la chaqueta">
+            <button id="backBtn" class="active" type="button">Espalda</button>
+            <button id="frontBtn" type="button">Frente</button>
+          </div>
+        </div>
+
+        <div class="stage" id="stage">
+          <svg id="svg" viewBox="0 0 810 1012" xmlns="http://www.w3.org/2000/svg" aria-label="Vista previa de chaqueta personalizada">
+            <defs>
+              <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="rgba(38,39,48,.22)" />
+              </filter>
+            </defs>
+            <rect width="810" height="1012" fill="transparent" />
+            <g id="jacket" filter="url(#sh)"></g>
+            <g id="items"></g>
+          </svg>
+        </div>
+
+        <div id="trashZone" class="trash-zone" aria-hidden="true">
+          <div class="trash-icon">🗑️</div>
+          <div class="trash-copy">Arrastra aquí para eliminar</div>
+        </div>
+
+        <div id="controls" class="controls" hidden>
+          <button id="controlsToggle" class="controls-toggle" type="button" aria-expanded="false">
+            <span>Ajustar este detalle</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div id="controlsBody" class="controls-body">
+            <p class="gesture-hint">En celular: mueve con un dedo, gira con dos dedos o arrastra a la caneca para eliminar.</p>
+            <div class="control-grid compact-controls">
+              <button id="rotate" type="button">↻ Girar</button>
+              <button id="dup" type="button">Duplicar</button>
+              <button id="del" class="danger" type="button">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side">
+        <section class="card letters-card">
+          <div class="head compact text-head">
+            <div>
+              <span>PARCHES DE LETRAS</span>
+            </div>
+          </div>
+
+          <label for="collection" class="stacked-label">
+            <span>Colección de letras</span>
+            <small>Combínalas como quieras</small>
+          </label>
+          <div id="collectionTabs" class="collection-tabs" aria-label="Colecciones de letras"></div>
+
+          <div id="letterPreview" class="letter-preview" aria-label="Letras disponibles"></div>
+
+          <label for="name">Escribe su nombre o nickname</label>
+          <div class="name-row">
+            <input id="name" class="input" maxlength="16" placeholder="Ej: ANTONIA" autocomplete="off" />
+            <button id="createName" class="primary" type="button">Crear nombre</button>
+          </div>
+        </section>
+
+        <section class="card patches-card">
+          <div class="head compact text-head">
+            <div>
+              <span>PARCHES Y DETALLES</span>
+              <h2>Elige los favoritos de tu hijo</h2>
+            </div>
+          </div>
+          <div id="groupTabs" class="group-tabs" aria-label="Tipo de parches"></div>
+          <div id="tabs" class="tabs" aria-label="Categorías de parches"></div>
+          <div id="patchGrid" class="patch-grid" aria-label="Catálogo de parches"></div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="card summary">
+      <div class="head compact text-head">
+        <div>
+          <span>TU DISEÑO ESTÁ LISTO</span>
+          <h2>Guarda tu diseño y elige dónde cotizar.</h2>
+        </div>
+      </div>
+      <p id="summary" class="design-summary" hidden></p>
+      <div class="actions final-actions">
+        <button id="download" type="button">Guardar diseño</button>
+      </div>
+      <div class="quote-panel" aria-label="Cotizar diseño PazKids">
+        <p class="quote-title">Cotiza tu chaqueta personalizada</p>
+        <div class="quote-buttons">
+          <button id="whatsappPanama" class="quote-country quote-panama" type="button">
+            <span class="quote-small">Cotizar en Panamá</span>
+            <strong>PazKids PTY</strong>
+          </button>
+          <button id="whatsappColombia" class="quote-country quote-colombia" type="button">
+            <span class="quote-small">Cotizar en Colombia</span>
+            <strong>PazKids COL</strong>
+          </button>
+        </div>
+      </div>
+      <details class="values-note price-guide">
+        <summary>Guía de Precios PazKids</summary>
+        <div class="values-content">
+          <p><strong>🇵🇦 PazKids PTY:</strong> chaqueta personalizada desde <strong>USD $40</strong>. Las letras tienen un valor de <strong>USD $2</strong> cada una. Los parches protagonistas tienen un valor aproximado de <strong>USD $7</strong> cada uno. Los parches de detalle van desde <strong>USD $1 hasta USD $5</strong>, según su tamaño.</p>
+          <p><strong>🇨🇴 PazKids COL:</strong> chaqueta personalizada desde <strong>$140.000 COP</strong>. Las letras tienen un valor de <strong>$5.000 COP</strong> cada una. Los parches protagonistas tienen un valor aproximado de <strong>$25.000 COP</strong> cada uno. Los parches de detalle van desde <strong>$4.000 hasta $15.000 COP</strong>, según su tamaño.</p>
+          <p class="values-final">El precio final se confirma por WhatsApp de acuerdo con el diseño elegido, la cantidad de letras, parches y disponibilidad.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-dev">Desarrollado por <strong>gasalanava</strong></p>
+    <p class="footer-socials">
+      <span>para</span>
+      <a href="https://www.instagram.com/pazkids.pty/" target="_blank" rel="noopener noreferrer" aria-label="Instagram PazKids PTY">
+        <span class="ig-mini" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.4" cy="6.6" r="1.2"></circle>
+          </svg>
+        </span>
+        @pazkids.pty
+      </a>
+      <span>y</span>
+      <a href="https://www.instagram.com/pazkids.col/" target="_blank" rel="noopener noreferrer" aria-label="Instagram PazKids COL">
+        <span class="ig-mini" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.4" cy="6.6" r="1.2"></circle>
+          </svg>
+        </span>
+        @pazkids.col
+      </a>
+    </p>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
