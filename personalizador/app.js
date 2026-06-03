@@ -148,6 +148,12 @@ function imgMeta(url) {
 }
 
 function src(path) { return S.cache.get(path) || path; }
+
+function thumbPath(path) {
+  if (!path || path.startsWith('data:') || path.startsWith('blob:')) return path;
+  if (!path.startsWith('assets/parches/')) return src(path);
+  return `assets/thumbs/${path.replace(/^assets\//, '').replace(/\.[^.]+$/, '.webp')}`;
+}
 function coll(id = S.activeColl) { return S.cat.letterCollections.find(collection => collection.id === id) || S.cat.letterCollections[0]; }
 function item(id) { return S.cat.patches.find(patch => patch.id === id); }
 function imgPath(patch) { return patch.kind === 'letter' ? coll(patch.collectionId)?.letters[patch.letter] : item(patch.catalogId)?.imagen; }
@@ -402,8 +408,12 @@ function card(path, alt, onClick, extraClass = '') {
   const image = document.createElement('img');
   image.loading = 'lazy';
   image.decoding = 'async';
-  image.src = src(path);
+  image.src = thumbPath(path);
   image.alt = alt;
+  image.onerror = () => {
+    image.onerror = null;
+    image.src = src(path);
+  };
   image.onload = () => {
     if (!S.meta.has(path)) S.meta.set(path, { w: image.naturalWidth || 1, h: image.naturalHeight || 1 });
   };
